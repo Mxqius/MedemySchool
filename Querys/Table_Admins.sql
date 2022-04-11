@@ -1,0 +1,17 @@
+Create Table tbl_admins (
+AdminID int primary key identity(1,1) not null,
+AdminName nvarchar (50) not null,
+AdminPassword nvarchar (128) not null, 
+AdminFirstName nvarchar(20) not null,
+AdminLastName nvarchar(30) not null,
+AdminPhoneNumber nvarchar(20) not null,
+AdminEmail nvarchar(50) ,
+AdminAddress nvarchar (128) not null,
+AdminNationalCode nvarchar(20) not null,
+AdminGender tinyint not null,
+AdminStatus tinyint not null,
+AdminPicture image , 
+AdminBirthDay date not null,
+AdminRole tinyint not null,
+AdminCreateDate nvarchar(50) not null,
+AdminCreateTime nvarchar(50) not null)

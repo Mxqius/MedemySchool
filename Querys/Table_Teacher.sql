@@ -1,0 +1,16 @@
+create Table tbl_teachers (
+TeacherID int primary key identity(1,1) not null,
+TeacherName nvarchar(50) not null,
+TeacherPassword nvarchar (128) not null,
+TeacherFirstName nvarchar(20) not null,
+TeacherLastName nvarchar(30) not null,
+TeacherEmail nvarchar(50) not null,
+TeacherPhoneNumber nvarchar (20) not null,
+TeacherGender tinyint not null,
+TeacherAddress nvarchar(128) not null,
+TeacherNationalCode nvarchar(15) not null,
+TeacherBirthDay date not null,
+TeacherPicture Image ,
+TeacherStatus tinyint not null,
+TeacherCreateDate nvarchar(50) not null,
+TeacherCreateTime nvarchar (50) not null)

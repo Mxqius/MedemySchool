@@ -1,0 +1,16 @@
+Create table tbl_students(
+StudentID int primary key identity (1,1) not null,
+StudentName nvarchar(50) not null,
+StudentPassword nvarchar(128) not null,
+StudentFirstName nvarchar(20) not null,
+StudentLastName nvarchar(30) not null,
+StudentAddress nvarchar(128) not null,
+StudentPhoneNumber nvarchar(20) not null, 
+StudentEmail nvarchar(50) ,
+StudentNationalCode nvarchar(15) not null,
+StudentGender tinyint not null,
+StudentStatus tinyint not null,
+StudentPicture Image ,
+StudentBirthDay Date not null,
+StudentCreateDate nvarchar(50) not null,
+StudentCreateTime nvarchar(50) not null)

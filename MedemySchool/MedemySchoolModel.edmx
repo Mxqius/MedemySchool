@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MedemySchoolModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_admins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AdminFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="AdminPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdminAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AdminNationalCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminGender" Type="tinyint" Nullable="false" />
+          <Property Name="AdminStatus" Type="tinyint" Nullable="false" />
+          <Property Name="AdminPicture" Type="image" />
+          <Property Name="AdminBirthDay" Type="date" Nullable="false" />
+          <Property Name="AdminRole" Type="tinyint" Nullable="false" />
+          <Property Name="AdminCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="StudentFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StudentLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="StudentAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="StudentPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StudentEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentNationalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StudentGender" Type="tinyint" Nullable="false" />
+          <Property Name="StudentStatus" Type="tinyint" Nullable="false" />
+          <Property Name="StudentPicture" Type="image" />
+          <Property Name="StudentBirthDay" Type="date" Nullable="false" />
+          <Property Name="StudentCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_teachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeacherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="TeacherFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TeacherLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TeacherEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TeacherGender" Type="tinyint" Nullable="false" />
+          <Property Name="TeacherAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="TeacherNationalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="TeacherBirthDay" Type="date" Nullable="false" />
+          <Property Name="TeacherPicture" Type="image" />
+          <Property Name="TeacherStatus" Type="tinyint" Nullable="false" />
+          <Property Name="TeacherCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MedemySchool.dbo.uvw_ShowAdmins' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="uvw_ShowAdmins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="AdminName" />
+            <PropertyRef Name="AdminPassword" />
+            <PropertyRef Name="AdminFirstName" />
+            <PropertyRef Name="AdminLastName" />
+            <PropertyRef Name="AdminPhoneNumber" />
+            <PropertyRef Name="AdminNationalCode" />
+            <PropertyRef Name="AdminAddress" />
+            <PropertyRef Name="AdminBirthDay" />
+            <PropertyRef Name="GenderAdmin" />
+            <PropertyRef Name="StatusAdmin" />
+            <PropertyRef Name="RoleAdmin" />
+            <PropertyRef Name="AdminCreateDate" />
+            <PropertyRef Name="AdminCreateTime" />
+            <PropertyRef Name="AdminRole" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AdminFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="AdminEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdminPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminNationalCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AdminBirthDay" Type="date" Nullable="false" />
+          <Property Name="AdminPicture" Type="image" />
+          <Property Name="GenderAdmin" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="StatusAdmin" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="RoleAdmin" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="AdminCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AdminRole" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MedemySchool.dbo.uvw_ShowStudents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="uvw_ShowStudents">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="StudentName" />
+            <PropertyRef Name="StudentPassword" />
+            <PropertyRef Name="StudentFirstName" />
+            <PropertyRef Name="StudentLastName" />
+            <PropertyRef Name="StudentPhoneNumber" />
+            <PropertyRef Name="StudentNationalCode" />
+            <PropertyRef Name="StudentAddress" />
+            <PropertyRef Name="StudentBirthDay" />
+            <PropertyRef Name="GenderStudent" />
+            <PropertyRef Name="StatusStudent" />
+            <PropertyRef Name="StudentCreateDate" />
+            <PropertyRef Name="StudentCreateTime" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="StudentFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StudentLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="StudentEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="StudentNationalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StudentAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="StudentBirthDay" Type="date" Nullable="false" />
+          <Property Name="StudentPicture" Type="image" />
+          <Property Name="GenderStudent" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="StatusStudent" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="StudentCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MedemySchool.dbo.uvw_ShowTeachers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="uvw_ShowTeachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+            <PropertyRef Name="TeacherName" />
+            <PropertyRef Name="TeacherPassword" />
+            <PropertyRef Name="TeacherFirstName" />
+            <PropertyRef Name="TeacherLastName" />
+            <PropertyRef Name="TeacherEmail" />
+            <PropertyRef Name="TeacherPhoneNumber" />
+            <PropertyRef Name="TeacherNationalCode" />
+            <PropertyRef Name="TeacherAddress" />
+            <PropertyRef Name="TeacherBirthDay" />
+            <PropertyRef Name="GenderTeacher" />
+            <PropertyRef Name="StatusTeacher" />
+            <PropertyRef Name="TeacherCreateDate" />
+            <PropertyRef Name="TeacherCreateTime" />
+          </Key>
+          <Property Name="TeacherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeacherName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherPassword" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="TeacherFirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TeacherLastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TeacherEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherPhoneNumber" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TeacherNationalCode" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="TeacherAddress" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="TeacherBirthDay" Type="date" Nullable="false" />
+          <Property Name="TeacherPicture" Type="image" />
+          <Property Name="GenderTeacher" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="StatusTeacher" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="TeacherCreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TeacherCreateTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="usp_AddAdmins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AdminName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminGender" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminPicture" Type="image" Mode="In" />
+          <Parameter Name="AdminBirthDay" Type="date" Mode="In" />
+          <Parameter Name="AdminRole" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_AddStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentGender" Type="tinyint" Mode="In" />
+          <Parameter Name="StudentStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="StudentPicture" Type="image" Mode="In" />
+          <Parameter Name="StudentBirthDay" Type="date" Mode="In" />
+          <Parameter Name="StudentCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_AddTeachers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeacherName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherGender" Type="tinyint" Mode="In" />
+          <Parameter Name="TeacherStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="TeacherPicture" Type="image" Mode="In" />
+          <Parameter Name="TeacherBirthDay" Type="date" Mode="In" />
+          <Parameter Name="TeacherCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteAdmins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AdminID" Type="int" Mode="In" />
+          <Parameter Name="AdminStatus" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentID" Type="int" Mode="In" />
+          <Parameter Name="StudentStatus" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="usp_DeleteTeachers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeacherID" Type="int" Mode="In" />
+          <Parameter Name="TeacherStatus" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateAdmins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="AdminID" Type="int" Mode="In" />
+          <Parameter Name="AdminName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminGender" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminPicture" Type="image" Mode="In" />
+          <Parameter Name="AdminBirthDay" Type="date" Mode="In" />
+          <Parameter Name="AdminRole" Type="tinyint" Mode="In" />
+          <Parameter Name="AdminCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="AdminCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateStudents" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StudentID" Type="int" Mode="In" />
+          <Parameter Name="StudentName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentGender" Type="tinyint" Mode="In" />
+          <Parameter Name="StudentStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="StudentPicture" Type="image" Mode="In" />
+          <Parameter Name="StudentBirthDay" Type="date" Mode="In" />
+          <Parameter Name="StudentCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="StudentCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_UpdateTeachers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TeacherID" Type="int" Mode="In" />
+          <Parameter Name="TeacherName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherFirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherLastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherPhoneNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherEmail" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherNationalCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherGender" Type="tinyint" Mode="In" />
+          <Parameter Name="TeacherStatus" Type="tinyint" Mode="In" />
+          <Parameter Name="TeacherPicture" Type="image" Mode="In" />
+          <Parameter Name="TeacherBirthDay" Type="date" Mode="In" />
+          <Parameter Name="TeacherCreateDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="TeacherCreateTime" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="MedemySchoolModelStoreContainer">
+          <EntitySet Name="tbl_admins" EntityType="Self.tbl_admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_students" EntityType="Self.tbl_students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_teachers" EntityType="Self.tbl_teachers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="uvw_ShowAdmins" EntityType="Self.uvw_ShowAdmins" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [uvw_ShowAdmins].[AdminID] AS [AdminID], 
+    [uvw_ShowAdmins].[AdminName] AS [AdminName], 
+    [uvw_ShowAdmins].[AdminPassword] AS [AdminPassword], 
+    [uvw_ShowAdmins].[AdminFirstName] AS [AdminFirstName], 
+    [uvw_ShowAdmins].[AdminLastName] AS [AdminLastName], 
+    [uvw_ShowAdmins].[AdminEmail] AS [AdminEmail], 
+    [uvw_ShowAdmins].[AdminPhoneNumber] AS [AdminPhoneNumber], 
+    [uvw_ShowAdmins].[AdminNationalCode] AS [AdminNationalCode], 
+    [uvw_ShowAdmins].[AdminAddress] AS [AdminAddress], 
+    [uvw_ShowAdmins].[AdminBirthDay] AS [AdminBirthDay], 
+    [uvw_ShowAdmins].[AdminPicture] AS [AdminPicture], 
+    [uvw_ShowAdmins].[GenderAdmin] AS [GenderAdmin], 
+    [uvw_ShowAdmins].[StatusAdmin] AS [StatusAdmin], 
+    [uvw_ShowAdmins].[RoleAdmin] AS [RoleAdmin], 
+    [uvw_ShowAdmins].[AdminCreateDate] AS [AdminCreateDate], 
+    [uvw_ShowAdmins].[AdminCreateTime] AS [AdminCreateTime], 
+    [uvw_ShowAdmins].[AdminRole] AS [AdminRole]
+    FROM [dbo].[uvw_ShowAdmins] AS [uvw_ShowAdmins]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="uvw_ShowStudents" EntityType="Self.uvw_ShowStudents" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [uvw_ShowStudents].[StudentID] AS [StudentID], 
+    [uvw_ShowStudents].[StudentName] AS [StudentName], 
+    [uvw_ShowStudents].[StudentPassword] AS [StudentPassword], 
+    [uvw_ShowStudents].[StudentFirstName] AS [StudentFirstName], 
+    [uvw_ShowStudents].[StudentLastName] AS [StudentLastName], 
+    [uvw_ShowStudents].[StudentEmail] AS [StudentEmail], 
+    [uvw_ShowStudents].[StudentPhoneNumber] AS [StudentPhoneNumber], 
+    [uvw_ShowStudents].[StudentNationalCode] AS [StudentNationalCode], 
+    [uvw_ShowStudents].[StudentAddress] AS [StudentAddress], 
+    [uvw_ShowStudents].[StudentBirthDay] AS [StudentBirthDay], 
+    [uvw_ShowStudents].[StudentPicture] AS [StudentPicture], 
+    [uvw_ShowStudents].[GenderStudent] AS [GenderStudent], 
+    [uvw_ShowStudents].[StatusStudent] AS [StatusStudent], 
+    [uvw_ShowStudents].[StudentCreateDate] AS [StudentCreateDate], 
+    [uvw_ShowStudents].[StudentCreateTime] AS [StudentCreateTime]
+    FROM [dbo].[uvw_ShowStudents] AS [uvw_ShowStudents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="uvw_ShowTeachers" EntityType="Self.uvw_ShowTeachers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [uvw_ShowTeachers].[TeacherID] AS [TeacherID], 
+    [uvw_ShowTeachers].[TeacherName] AS [TeacherName], 
+    [uvw_ShowTeachers].[TeacherPassword] AS [TeacherPassword], 
+    [uvw_ShowTeachers].[TeacherFirstName] AS [TeacherFirstName], 
+    [uvw_ShowTeachers].[TeacherLastName] AS [TeacherLastName], 
+    [uvw_ShowTeachers].[TeacherEmail] AS [TeacherEmail], 
+    [uvw_ShowTeachers].[TeacherPhoneNumber] AS [TeacherPhoneNumber], 
+    [uvw_ShowTeachers].[TeacherNationalCode] AS [TeacherNationalCode], 
+    [uvw_ShowTeachers].[TeacherAddress] AS [TeacherAddress], 
+    [uvw_ShowTeachers].[TeacherBirthDay] AS [TeacherBirthDay], 
+    [uvw_ShowTeachers].[TeacherPicture] AS [TeacherPicture], 
+    [uvw_ShowTeachers].[GenderTeacher] AS [GenderTeacher], 
+    [uvw_ShowTeachers].[StatusTeacher] AS [StatusTeacher], 
+    [uvw_ShowTeachers].[TeacherCreateDate] AS [TeacherCreateDate], 
+    [uvw_ShowTeachers].[TeacherCreateTime] AS [TeacherCreateTime]
+    FROM [dbo].[uvw_ShowTeachers] AS [uvw_ShowTeachers]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedemySchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_admins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdminAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminNationalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminGender" Type="Byte" Nullable="false" />
+          <Property Name="AdminStatus" Type="Byte" Nullable="false" />
+          <Property Name="AdminPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="AdminBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AdminRole" Type="Byte" Nullable="false" />
+          <Property Name="AdminCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentNationalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentGender" Type="Byte" Nullable="false" />
+          <Property Name="StudentStatus" Type="Byte" Nullable="false" />
+          <Property Name="StudentPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StudentBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StudentCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_teachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherGender" Type="Byte" Nullable="false" />
+          <Property Name="TeacherAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherNationalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TeacherPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TeacherStatus" Type="Byte" Nullable="false" />
+          <Property Name="TeacherCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uvw_ShowAdmins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+            <PropertyRef Name="AdminName" />
+            <PropertyRef Name="AdminPassword" />
+            <PropertyRef Name="AdminFirstName" />
+            <PropertyRef Name="AdminLastName" />
+            <PropertyRef Name="AdminPhoneNumber" />
+            <PropertyRef Name="AdminNationalCode" />
+            <PropertyRef Name="AdminAddress" />
+            <PropertyRef Name="AdminBirthDay" />
+            <PropertyRef Name="GenderAdmin" />
+            <PropertyRef Name="StatusAdmin" />
+            <PropertyRef Name="RoleAdmin" />
+            <PropertyRef Name="AdminCreateDate" />
+            <PropertyRef Name="AdminCreateTime" />
+            <PropertyRef Name="AdminRole" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminNationalCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AdminPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="GenderAdmin" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StatusAdmin" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleAdmin" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AdminRole" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uvw_ShowStudents">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="StudentName" />
+            <PropertyRef Name="StudentPassword" />
+            <PropertyRef Name="StudentFirstName" />
+            <PropertyRef Name="StudentLastName" />
+            <PropertyRef Name="StudentPhoneNumber" />
+            <PropertyRef Name="StudentNationalCode" />
+            <PropertyRef Name="StudentAddress" />
+            <PropertyRef Name="StudentBirthDay" />
+            <PropertyRef Name="GenderStudent" />
+            <PropertyRef Name="StatusStudent" />
+            <PropertyRef Name="StudentCreateDate" />
+            <PropertyRef Name="StudentCreateTime" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentNationalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StudentPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="GenderStudent" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StatusStudent" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StudentCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="uvw_ShowTeachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+            <PropertyRef Name="TeacherName" />
+            <PropertyRef Name="TeacherPassword" />
+            <PropertyRef Name="TeacherFirstName" />
+            <PropertyRef Name="TeacherLastName" />
+            <PropertyRef Name="TeacherEmail" />
+            <PropertyRef Name="TeacherPhoneNumber" />
+            <PropertyRef Name="TeacherNationalCode" />
+            <PropertyRef Name="TeacherAddress" />
+            <PropertyRef Name="TeacherBirthDay" />
+            <PropertyRef Name="GenderTeacher" />
+            <PropertyRef Name="StatusTeacher" />
+            <PropertyRef Name="TeacherCreateDate" />
+            <PropertyRef Name="TeacherCreateTime" />
+          </Key>
+          <Property Name="TeacherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeacherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherPassword" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherFirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherLastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherNationalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherAddress" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherBirthDay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TeacherPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="GenderTeacher" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StatusTeacher" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherCreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeacherCreateTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MedemySchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_admins" EntityType="Self.tbl_admins" />
+          <EntitySet Name="tbl_students" EntityType="Self.tbl_students" />
+          <EntitySet Name="tbl_teachers" EntityType="Self.tbl_teachers" />
+          <EntitySet Name="uvw_ShowAdmins" EntityType="Self.uvw_ShowAdmins" />
+          <EntitySet Name="uvw_ShowStudents" EntityType="Self.uvw_ShowStudents" />
+          <EntitySet Name="uvw_ShowTeachers" EntityType="Self.uvw_ShowTeachers" />
+          <FunctionImport Name="usp_AddAdmins" ReturnType="Collection(MedemySchoolModel.usp_AddAdmins_Result)">
+            <Parameter Name="AdminName" Mode="In" Type="String" />
+            <Parameter Name="AdminPassword" Mode="In" Type="String" />
+            <Parameter Name="AdminFirstName" Mode="In" Type="String" />
+            <Parameter Name="AdminLastName" Mode="In" Type="String" />
+            <Parameter Name="AdminPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="AdminEmail" Mode="In" Type="String" />
+            <Parameter Name="AdminAddress" Mode="In" Type="String" />
+            <Parameter Name="AdminNationalCode" Mode="In" Type="String" />
+            <Parameter Name="AdminGender" Mode="In" Type="Byte" />
+            <Parameter Name="AdminStatus" Mode="In" Type="Byte" />
+            <Parameter Name="AdminPicture" Mode="In" Type="Binary" />
+            <Parameter Name="AdminBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="AdminRole" Mode="In" Type="Byte" />
+            <Parameter Name="AdminCreateDate" Mode="In" Type="String" />
+            <Parameter Name="AdminCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_AddStudents" ReturnType="Collection(MedemySchoolModel.usp_AddStudents_Result)">
+            <Parameter Name="StudentName" Mode="In" Type="String" />
+            <Parameter Name="StudentPassword" Mode="In" Type="String" />
+            <Parameter Name="StudentFirstName" Mode="In" Type="String" />
+            <Parameter Name="StudentLastName" Mode="In" Type="String" />
+            <Parameter Name="StudentPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="StudentEmail" Mode="In" Type="String" />
+            <Parameter Name="StudentAddress" Mode="In" Type="String" />
+            <Parameter Name="StudentNationalCode" Mode="In" Type="String" />
+            <Parameter Name="StudentGender" Mode="In" Type="Byte" />
+            <Parameter Name="StudentStatus" Mode="In" Type="Byte" />
+            <Parameter Name="StudentPicture" Mode="In" Type="Binary" />
+            <Parameter Name="StudentBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="StudentCreateDate" Mode="In" Type="String" />
+            <Parameter Name="StudentCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_AddTeachers" ReturnType="Collection(MedemySchoolModel.usp_AddTeachers_Result)">
+            <Parameter Name="TeacherName" Mode="In" Type="String" />
+            <Parameter Name="TeacherPassword" Mode="In" Type="String" />
+            <Parameter Name="TeacherFirstName" Mode="In" Type="String" />
+            <Parameter Name="TeacherLastName" Mode="In" Type="String" />
+            <Parameter Name="TeacherPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="TeacherEmail" Mode="In" Type="String" />
+            <Parameter Name="TeacherAddress" Mode="In" Type="String" />
+            <Parameter Name="TeacherNationalCode" Mode="In" Type="String" />
+            <Parameter Name="TeacherGender" Mode="In" Type="Byte" />
+            <Parameter Name="TeacherStatus" Mode="In" Type="Byte" />
+            <Parameter Name="TeacherPicture" Mode="In" Type="Binary" />
+            <Parameter Name="TeacherBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="TeacherCreateDate" Mode="In" Type="String" />
+            <Parameter Name="TeacherCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteAdmins" ReturnType="Collection(MedemySchoolModel.usp_DeleteAdmins_Result)">
+            <Parameter Name="AdminID" Mode="In" Type="Int32" />
+            <Parameter Name="AdminStatus" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteStudents" ReturnType="Collection(MedemySchoolModel.usp_DeleteStudents_Result)">
+            <Parameter Name="StudentID" Mode="In" Type="Int32" />
+            <Parameter Name="StudentStatus" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="usp_DeleteTeachers" ReturnType="Collection(MedemySchoolModel.usp_DeleteTeachers_Result)">
+            <Parameter Name="TeacherID" Mode="In" Type="Int32" />
+            <Parameter Name="TeacherStatus" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateAdmins" ReturnType="Collection(MedemySchoolModel.usp_UpdateAdmins_Result)">
+            <Parameter Name="AdminID" Mode="In" Type="Int32" />
+            <Parameter Name="AdminName" Mode="In" Type="String" />
+            <Parameter Name="AdminPassword" Mode="In" Type="String" />
+            <Parameter Name="AdminFirstName" Mode="In" Type="String" />
+            <Parameter Name="AdminLastName" Mode="In" Type="String" />
+            <Parameter Name="AdminPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="AdminEmail" Mode="In" Type="String" />
+            <Parameter Name="AdminAddress" Mode="In" Type="String" />
+            <Parameter Name="AdminNationalCode" Mode="In" Type="String" />
+            <Parameter Name="AdminGender" Mode="In" Type="Byte" />
+            <Parameter Name="AdminStatus" Mode="In" Type="Byte" />
+            <Parameter Name="AdminPicture" Mode="In" Type="Binary" />
+            <Parameter Name="AdminBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="AdminRole" Mode="In" Type="Byte" />
+            <Parameter Name="AdminCreateDate" Mode="In" Type="String" />
+            <Parameter Name="AdminCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateStudents" ReturnType="Collection(MedemySchoolModel.usp_UpdateStudents_Result)">
+            <Parameter Name="StudentID" Mode="In" Type="Int32" />
+            <Parameter Name="StudentName" Mode="In" Type="String" />
+            <Parameter Name="StudentPassword" Mode="In" Type="String" />
+            <Parameter Name="StudentFirstName" Mode="In" Type="String" />
+            <Parameter Name="StudentLastName" Mode="In" Type="String" />
+            <Parameter Name="StudentPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="StudentEmail" Mode="In" Type="String" />
+            <Parameter Name="StudentAddress" Mode="In" Type="String" />
+            <Parameter Name="StudentNationalCode" Mode="In" Type="String" />
+            <Parameter Name="StudentGender" Mode="In" Type="Byte" />
+            <Parameter Name="StudentStatus" Mode="In" Type="Byte" />
+            <Parameter Name="StudentPicture" Mode="In" Type="Binary" />
+            <Parameter Name="StudentBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="StudentCreateDate" Mode="In" Type="String" />
+            <Parameter Name="StudentCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_UpdateTeachers" ReturnType="Collection(MedemySchoolModel.usp_UpdateTeachers_Result)">
+            <Parameter Name="TeacherID" Mode="In" Type="Int32" />
+            <Parameter Name="TeacherName" Mode="In" Type="String" />
+            <Parameter Name="TeacherPassword" Mode="In" Type="String" />
+            <Parameter Name="TeacherFirstName" Mode="In" Type="String" />
+            <Parameter Name="TeacherLastName" Mode="In" Type="String" />
+            <Parameter Name="TeacherPhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="TeacherEmail" Mode="In" Type="String" />
+            <Parameter Name="TeacherAddress" Mode="In" Type="String" />
+            <Parameter Name="TeacherNationalCode" Mode="In" Type="String" />
+            <Parameter Name="TeacherGender" Mode="In" Type="Byte" />
+            <Parameter Name="TeacherStatus" Mode="In" Type="Byte" />
+            <Parameter Name="TeacherPicture" Mode="In" Type="Binary" />
+            <Parameter Name="TeacherBirthDay" Mode="In" Type="DateTime" />
+            <Parameter Name="TeacherCreateDate" Mode="In" Type="String" />
+            <Parameter Name="TeacherCreateTime" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="usp_AddAdmins_Result">
+          <Property Type="Int32" Name="AdminID" Nullable="false" />
+          <Property Type="String" Name="AdminName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="AdminPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdminAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminNationalCode" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="AdminGender" Nullable="false" />
+          <Property Type="Byte" Name="AdminStatus" Nullable="false" />
+          <Property Type="Binary" Name="AdminPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="AdminBirthDay" Nullable="false" />
+          <Property Type="Byte" Name="AdminRole" Nullable="false" />
+          <Property Type="String" Name="AdminCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_AddStudents_Result">
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="StudentAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StudentNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="Byte" Name="StudentGender" Nullable="false" />
+          <Property Type="Byte" Name="StudentStatus" Nullable="false" />
+          <Property Type="Binary" Name="StudentPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="StudentBirthDay" Nullable="false" />
+          <Property Type="String" Name="StudentCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_AddTeachers_Result">
+          <Property Type="Int32" Name="TeacherID" Nullable="false" />
+          <Property Type="String" Name="TeacherName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TeacherLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TeacherEmail" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="TeacherGender" Nullable="false" />
+          <Property Type="String" Name="TeacherAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="TeacherBirthDay" Nullable="false" />
+          <Property Type="Binary" Name="TeacherPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="Byte" Name="TeacherStatus" Nullable="false" />
+          <Property Type="String" Name="TeacherCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_DeleteAdmins_Result">
+          <Property Type="Int32" Name="AdminID" Nullable="false" />
+          <Property Type="String" Name="AdminName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="AdminPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdminAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminNationalCode" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="AdminGender" Nullable="false" />
+          <Property Type="Byte" Name="AdminStatus" Nullable="false" />
+          <Property Type="Binary" Name="AdminPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="AdminBirthDay" Nullable="false" />
+          <Property Type="Byte" Name="AdminRole" Nullable="false" />
+          <Property Type="String" Name="AdminCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_DeleteStudents_Result">
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="StudentAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StudentNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="Byte" Name="StudentGender" Nullable="false" />
+          <Property Type="Byte" Name="StudentStatus" Nullable="false" />
+          <Property Type="Binary" Name="StudentPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="StudentBirthDay" Nullable="false" />
+          <Property Type="String" Name="StudentCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_DeleteTeachers_Result">
+          <Property Type="Int32" Name="TeacherID" Nullable="false" />
+          <Property Type="String" Name="TeacherName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TeacherLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TeacherEmail" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="TeacherGender" Nullable="false" />
+          <Property Type="String" Name="TeacherAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="TeacherBirthDay" Nullable="false" />
+          <Property Type="Binary" Name="TeacherPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="Byte" Name="TeacherStatus" Nullable="false" />
+          <Property Type="String" Name="TeacherCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_UpdateAdmins_Result">
+          <Property Type="Int32" Name="AdminID" Nullable="false" />
+          <Property Type="String" Name="AdminName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="AdminPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="AdminEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AdminAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="AdminNationalCode" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="AdminGender" Nullable="false" />
+          <Property Type="Byte" Name="AdminStatus" Nullable="false" />
+          <Property Type="Binary" Name="AdminPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="AdminBirthDay" Nullable="false" />
+          <Property Type="Byte" Name="AdminRole" Nullable="false" />
+          <Property Type="String" Name="AdminCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="AdminCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_UpdateStudents_Result">
+          <Property Type="Int32" Name="StudentID" Nullable="false" />
+          <Property Type="String" Name="StudentName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="StudentAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="StudentPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="StudentEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="StudentNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="Byte" Name="StudentGender" Nullable="false" />
+          <Property Type="Byte" Name="StudentStatus" Nullable="false" />
+          <Property Type="Binary" Name="StudentPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="DateTime" Name="StudentBirthDay" Nullable="false" />
+          <Property Type="String" Name="StudentCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="StudentCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_UpdateTeachers_Result">
+          <Property Type="Int32" Name="TeacherID" Nullable="false" />
+          <Property Type="String" Name="TeacherName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPassword" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherFirstName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TeacherLastName" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="TeacherEmail" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherPhoneNumber" Nullable="false" MaxLength="20" />
+          <Property Type="Byte" Name="TeacherGender" Nullable="false" />
+          <Property Type="String" Name="TeacherAddress" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="TeacherNationalCode" Nullable="false" MaxLength="15" />
+          <Property Type="DateTime" Name="TeacherBirthDay" Nullable="false" />
+          <Property Type="Binary" Name="TeacherPicture" Nullable="true" MaxLength="Max" />
+          <Property Type="Byte" Name="TeacherStatus" Nullable="false" />
+          <Property Type="String" Name="TeacherCreateDate" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TeacherCreateTime" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedemySchoolModelStoreContainer" CdmEntityContainer="MedemySchoolEntities">
+          <EntitySetMapping Name="tbl_admins">
+            <EntityTypeMapping TypeName="MedemySchoolModel.tbl_admins">
+              <MappingFragment StoreEntitySet="tbl_admins">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminAddress" ColumnName="AdminAddress" />
+                <ScalarProperty Name="AdminNationalCode" ColumnName="AdminNationalCode" />
+                <ScalarProperty Name="AdminGender" ColumnName="AdminGender" />
+                <ScalarProperty Name="AdminStatus" ColumnName="AdminStatus" />
+                <ScalarProperty Name="AdminPicture" ColumnName="AdminPicture" />
+                <ScalarProperty Name="AdminBirthDay" ColumnName="AdminBirthDay" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+                <ScalarProperty Name="AdminCreateDate" ColumnName="AdminCreateDate" />
+                <ScalarProperty Name="AdminCreateTime" ColumnName="AdminCreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_students">
+            <EntityTypeMapping TypeName="MedemySchoolModel.tbl_students">
+              <MappingFragment StoreEntitySet="tbl_students">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+                <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+                <ScalarProperty Name="StudentAddress" ColumnName="StudentAddress" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentNationalCode" ColumnName="StudentNationalCode" />
+                <ScalarProperty Name="StudentGender" ColumnName="StudentGender" />
+                <ScalarProperty Name="StudentStatus" ColumnName="StudentStatus" />
+                <ScalarProperty Name="StudentPicture" ColumnName="StudentPicture" />
+                <ScalarProperty Name="StudentBirthDay" ColumnName="StudentBirthDay" />
+                <ScalarProperty Name="StudentCreateDate" ColumnName="StudentCreateDate" />
+                <ScalarProperty Name="StudentCreateTime" ColumnName="StudentCreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_teachers">
+            <EntityTypeMapping TypeName="MedemySchoolModel.tbl_teachers">
+              <MappingFragment StoreEntitySet="tbl_teachers">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherPassword" ColumnName="TeacherPassword" />
+                <ScalarProperty Name="TeacherFirstName" ColumnName="TeacherFirstName" />
+                <ScalarProperty Name="TeacherLastName" ColumnName="TeacherLastName" />
+                <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+                <ScalarProperty Name="TeacherPhoneNumber" ColumnName="TeacherPhoneNumber" />
+                <ScalarProperty Name="TeacherGender" ColumnName="TeacherGender" />
+                <ScalarProperty Name="TeacherAddress" ColumnName="TeacherAddress" />
+                <ScalarProperty Name="TeacherNationalCode" ColumnName="TeacherNationalCode" />
+                <ScalarProperty Name="TeacherBirthDay" ColumnName="TeacherBirthDay" />
+                <ScalarProperty Name="TeacherPicture" ColumnName="TeacherPicture" />
+                <ScalarProperty Name="TeacherStatus" ColumnName="TeacherStatus" />
+                <ScalarProperty Name="TeacherCreateDate" ColumnName="TeacherCreateDate" />
+                <ScalarProperty Name="TeacherCreateTime" ColumnName="TeacherCreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uvw_ShowAdmins">
+            <EntityTypeMapping TypeName="MedemySchoolModel.uvw_ShowAdmins">
+              <MappingFragment StoreEntitySet="uvw_ShowAdmins">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
+                <ScalarProperty Name="AdminNationalCode" ColumnName="AdminNationalCode" />
+                <ScalarProperty Name="AdminAddress" ColumnName="AdminAddress" />
+                <ScalarProperty Name="AdminBirthDay" ColumnName="AdminBirthDay" />
+                <ScalarProperty Name="AdminPicture" ColumnName="AdminPicture" />
+                <ScalarProperty Name="GenderAdmin" ColumnName="GenderAdmin" />
+                <ScalarProperty Name="StatusAdmin" ColumnName="StatusAdmin" />
+                <ScalarProperty Name="RoleAdmin" ColumnName="RoleAdmin" />
+                <ScalarProperty Name="AdminCreateDate" ColumnName="AdminCreateDate" />
+                <ScalarProperty Name="AdminCreateTime" ColumnName="AdminCreateTime" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uvw_ShowStudents">
+            <EntityTypeMapping TypeName="MedemySchoolModel.uvw_ShowStudents">
+              <MappingFragment StoreEntitySet="uvw_ShowStudents">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+                <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentNationalCode" ColumnName="StudentNationalCode" />
+                <ScalarProperty Name="StudentAddress" ColumnName="StudentAddress" />
+                <ScalarProperty Name="StudentBirthDay" ColumnName="StudentBirthDay" />
+                <ScalarProperty Name="StudentPicture" ColumnName="StudentPicture" />
+                <ScalarProperty Name="GenderStudent" ColumnName="GenderStudent" />
+                <ScalarProperty Name="StatusStudent" ColumnName="StatusStudent" />
+                <ScalarProperty Name="StudentCreateDate" ColumnName="StudentCreateDate" />
+                <ScalarProperty Name="StudentCreateTime" ColumnName="StudentCreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uvw_ShowTeachers">
+            <EntityTypeMapping TypeName="MedemySchoolModel.uvw_ShowTeachers">
+              <MappingFragment StoreEntitySet="uvw_ShowTeachers">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherPassword" ColumnName="TeacherPassword" />
+                <ScalarProperty Name="TeacherFirstName" ColumnName="TeacherFirstName" />
+                <ScalarProperty Name="TeacherLastName" ColumnName="TeacherLastName" />
+                <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+                <ScalarProperty Name="TeacherPhoneNumber" ColumnName="TeacherPhoneNumber" />
+                <ScalarProperty Name="TeacherNationalCode" ColumnName="TeacherNationalCode" />
+                <ScalarProperty Name="TeacherAddress" ColumnName="TeacherAddress" />
+                <ScalarProperty Name="TeacherBirthDay" ColumnName="TeacherBirthDay" />
+                <ScalarProperty Name="TeacherPicture" ColumnName="TeacherPicture" />
+                <ScalarProperty Name="GenderTeacher" ColumnName="GenderTeacher" />
+                <ScalarProperty Name="StatusTeacher" ColumnName="StatusTeacher" />
+                <ScalarProperty Name="TeacherCreateDate" ColumnName="TeacherCreateDate" />
+                <ScalarProperty Name="TeacherCreateTime" ColumnName="TeacherCreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_AddAdmins" FunctionName="MedemySchoolModel.Store.usp_AddAdmins">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_AddAdmins_Result">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminAddress" ColumnName="AdminAddress" />
+                <ScalarProperty Name="AdminNationalCode" ColumnName="AdminNationalCode" />
+                <ScalarProperty Name="AdminGender" ColumnName="AdminGender" />
+                <ScalarProperty Name="AdminStatus" ColumnName="AdminStatus" />
+                <ScalarProperty Name="AdminPicture" ColumnName="AdminPicture" />
+                <ScalarProperty Name="AdminBirthDay" ColumnName="AdminBirthDay" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+                <ScalarProperty Name="AdminCreateDate" ColumnName="AdminCreateDate" />
+                <ScalarProperty Name="AdminCreateTime" ColumnName="AdminCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_AddStudents" FunctionName="MedemySchoolModel.Store.usp_AddStudents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_AddStudents_Result">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+                <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+                <ScalarProperty Name="StudentAddress" ColumnName="StudentAddress" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentNationalCode" ColumnName="StudentNationalCode" />
+                <ScalarProperty Name="StudentGender" ColumnName="StudentGender" />
+                <ScalarProperty Name="StudentStatus" ColumnName="StudentStatus" />
+                <ScalarProperty Name="StudentPicture" ColumnName="StudentPicture" />
+                <ScalarProperty Name="StudentBirthDay" ColumnName="StudentBirthDay" />
+                <ScalarProperty Name="StudentCreateDate" ColumnName="StudentCreateDate" />
+                <ScalarProperty Name="StudentCreateTime" ColumnName="StudentCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_AddTeachers" FunctionName="MedemySchoolModel.Store.usp_AddTeachers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_AddTeachers_Result">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherPassword" ColumnName="TeacherPassword" />
+                <ScalarProperty Name="TeacherFirstName" ColumnName="TeacherFirstName" />
+                <ScalarProperty Name="TeacherLastName" ColumnName="TeacherLastName" />
+                <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+                <ScalarProperty Name="TeacherPhoneNumber" ColumnName="TeacherPhoneNumber" />
+                <ScalarProperty Name="TeacherGender" ColumnName="TeacherGender" />
+                <ScalarProperty Name="TeacherAddress" ColumnName="TeacherAddress" />
+                <ScalarProperty Name="TeacherNationalCode" ColumnName="TeacherNationalCode" />
+                <ScalarProperty Name="TeacherBirthDay" ColumnName="TeacherBirthDay" />
+                <ScalarProperty Name="TeacherPicture" ColumnName="TeacherPicture" />
+                <ScalarProperty Name="TeacherStatus" ColumnName="TeacherStatus" />
+                <ScalarProperty Name="TeacherCreateDate" ColumnName="TeacherCreateDate" />
+                <ScalarProperty Name="TeacherCreateTime" ColumnName="TeacherCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_DeleteAdmins" FunctionName="MedemySchoolModel.Store.usp_DeleteAdmins">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_DeleteAdmins_Result">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminAddress" ColumnName="AdminAddress" />
+                <ScalarProperty Name="AdminNationalCode" ColumnName="AdminNationalCode" />
+                <ScalarProperty Name="AdminGender" ColumnName="AdminGender" />
+                <ScalarProperty Name="AdminStatus" ColumnName="AdminStatus" />
+                <ScalarProperty Name="AdminPicture" ColumnName="AdminPicture" />
+                <ScalarProperty Name="AdminBirthDay" ColumnName="AdminBirthDay" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+                <ScalarProperty Name="AdminCreateDate" ColumnName="AdminCreateDate" />
+                <ScalarProperty Name="AdminCreateTime" ColumnName="AdminCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_DeleteStudents" FunctionName="MedemySchoolModel.Store.usp_DeleteStudents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_DeleteStudents_Result">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+                <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+                <ScalarProperty Name="StudentAddress" ColumnName="StudentAddress" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentNationalCode" ColumnName="StudentNationalCode" />
+                <ScalarProperty Name="StudentGender" ColumnName="StudentGender" />
+                <ScalarProperty Name="StudentStatus" ColumnName="StudentStatus" />
+                <ScalarProperty Name="StudentPicture" ColumnName="StudentPicture" />
+                <ScalarProperty Name="StudentBirthDay" ColumnName="StudentBirthDay" />
+                <ScalarProperty Name="StudentCreateDate" ColumnName="StudentCreateDate" />
+                <ScalarProperty Name="StudentCreateTime" ColumnName="StudentCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_DeleteTeachers" FunctionName="MedemySchoolModel.Store.usp_DeleteTeachers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_DeleteTeachers_Result">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherPassword" ColumnName="TeacherPassword" />
+                <ScalarProperty Name="TeacherFirstName" ColumnName="TeacherFirstName" />
+                <ScalarProperty Name="TeacherLastName" ColumnName="TeacherLastName" />
+                <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+                <ScalarProperty Name="TeacherPhoneNumber" ColumnName="TeacherPhoneNumber" />
+                <ScalarProperty Name="TeacherGender" ColumnName="TeacherGender" />
+                <ScalarProperty Name="TeacherAddress" ColumnName="TeacherAddress" />
+                <ScalarProperty Name="TeacherNationalCode" ColumnName="TeacherNationalCode" />
+                <ScalarProperty Name="TeacherBirthDay" ColumnName="TeacherBirthDay" />
+                <ScalarProperty Name="TeacherPicture" ColumnName="TeacherPicture" />
+                <ScalarProperty Name="TeacherStatus" ColumnName="TeacherStatus" />
+                <ScalarProperty Name="TeacherCreateDate" ColumnName="TeacherCreateDate" />
+                <ScalarProperty Name="TeacherCreateTime" ColumnName="TeacherCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdateAdmins" FunctionName="MedemySchoolModel.Store.usp_UpdateAdmins">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_UpdateAdmins_Result">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+                <ScalarProperty Name="AdminFirstName" ColumnName="AdminFirstName" />
+                <ScalarProperty Name="AdminLastName" ColumnName="AdminLastName" />
+                <ScalarProperty Name="AdminPhoneNumber" ColumnName="AdminPhoneNumber" />
+                <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+                <ScalarProperty Name="AdminAddress" ColumnName="AdminAddress" />
+                <ScalarProperty Name="AdminNationalCode" ColumnName="AdminNationalCode" />
+                <ScalarProperty Name="AdminGender" ColumnName="AdminGender" />
+                <ScalarProperty Name="AdminStatus" ColumnName="AdminStatus" />
+                <ScalarProperty Name="AdminPicture" ColumnName="AdminPicture" />
+                <ScalarProperty Name="AdminBirthDay" ColumnName="AdminBirthDay" />
+                <ScalarProperty Name="AdminRole" ColumnName="AdminRole" />
+                <ScalarProperty Name="AdminCreateDate" ColumnName="AdminCreateDate" />
+                <ScalarProperty Name="AdminCreateTime" ColumnName="AdminCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdateStudents" FunctionName="MedemySchoolModel.Store.usp_UpdateStudents">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_UpdateStudents_Result">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentPassword" ColumnName="StudentPassword" />
+                <ScalarProperty Name="StudentFirstName" ColumnName="StudentFirstName" />
+                <ScalarProperty Name="StudentLastName" ColumnName="StudentLastName" />
+                <ScalarProperty Name="StudentAddress" ColumnName="StudentAddress" />
+                <ScalarProperty Name="StudentPhoneNumber" ColumnName="StudentPhoneNumber" />
+                <ScalarProperty Name="StudentEmail" ColumnName="StudentEmail" />
+                <ScalarProperty Name="StudentNationalCode" ColumnName="StudentNationalCode" />
+                <ScalarProperty Name="StudentGender" ColumnName="StudentGender" />
+                <ScalarProperty Name="StudentStatus" ColumnName="StudentStatus" />
+                <ScalarProperty Name="StudentPicture" ColumnName="StudentPicture" />
+                <ScalarProperty Name="StudentBirthDay" ColumnName="StudentBirthDay" />
+                <ScalarProperty Name="StudentCreateDate" ColumnName="StudentCreateDate" />
+                <ScalarProperty Name="StudentCreateTime" ColumnName="StudentCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_UpdateTeachers" FunctionName="MedemySchoolModel.Store.usp_UpdateTeachers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MedemySchoolModel.usp_UpdateTeachers_Result">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="TeacherName" ColumnName="TeacherName" />
+                <ScalarProperty Name="TeacherPassword" ColumnName="TeacherPassword" />
+                <ScalarProperty Name="TeacherFirstName" ColumnName="TeacherFirstName" />
+                <ScalarProperty Name="TeacherLastName" ColumnName="TeacherLastName" />
+                <ScalarProperty Name="TeacherEmail" ColumnName="TeacherEmail" />
+                <ScalarProperty Name="TeacherPhoneNumber" ColumnName="TeacherPhoneNumber" />
+                <ScalarProperty Name="TeacherGender" ColumnName="TeacherGender" />
+                <ScalarProperty Name="TeacherAddress" ColumnName="TeacherAddress" />
+                <ScalarProperty Name="TeacherNationalCode" ColumnName="TeacherNationalCode" />
+                <ScalarProperty Name="TeacherBirthDay" ColumnName="TeacherBirthDay" />
+                <ScalarProperty Name="TeacherPicture" ColumnName="TeacherPicture" />
+                <ScalarProperty Name="TeacherStatus" ColumnName="TeacherStatus" />
+                <ScalarProperty Name="TeacherCreateDate" ColumnName="TeacherCreateDate" />
+                <ScalarProperty Name="TeacherCreateTime" ColumnName="TeacherCreateTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
